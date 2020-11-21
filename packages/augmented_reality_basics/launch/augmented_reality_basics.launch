@@ -1,0 +1,12 @@
+<launch>
+  <arg name="robot_name"/>
+  <arg name="pkg_name" value="augmented_reality_basics"/>
+  <arg name="node_name" default="augmented_reality_basics_node"/>
+  <arg name="map_file" default="lane" doc="Specify a mapfile. ex:lane"/>
+
+  <group ns="$(arg robot_name)">
+    <node name="augmented_reality_basics_node" pkg="$(arg pkg_name)" type="augmented_reality_basics.py" output="screen" required="true" args="$(arg map_file)">
+    </node>
+  </group>
+
+</launch>
